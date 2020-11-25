@@ -9,7 +9,7 @@ Machine:
 	
 Procedure:
 	'procedure' name=ID   	//Nom de la procédure
-	(body+=Operation)+		//Contenu de procédure a 1 ou plusieurs procédures
+	(body+=Operation)+		//Contenu de procédure a une ou plusieurs procédures
 	result=Result			//Resultat retourné par la procédure
 ;
 
