@@ -4,15 +4,12 @@
 package org.xtext.example.mydsl.mymix.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.example.mydsl.mymix.MymixPackage;
-import org.xtext.example.mydsl.mymix.Time;
 import org.xtext.example.mydsl.mymix.Wait;
 
 /**
@@ -31,14 +28,24 @@ import org.xtext.example.mydsl.mymix.Wait;
 public class WaitImpl extends OperationImpl implements Wait
 {
   /**
-   * The cached value of the '{@link #getTime() <em>Time</em>}' containment reference.
+   * The default value of the '{@link #getTime() <em>Time</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTime()
    * @generated
    * @ordered
    */
-  protected Time time;
+  protected static final int TIME_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getTime() <em>Time</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTime()
+   * @generated
+   * @ordered
+   */
+  protected int time = TIME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,7 +74,7 @@ public class WaitImpl extends OperationImpl implements Wait
    * @generated
    */
   @Override
-  public Time getTime()
+  public int getTime()
   {
     return time;
   }
@@ -77,54 +84,13 @@ public class WaitImpl extends OperationImpl implements Wait
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTime(Time newTime, NotificationChain msgs)
+  @Override
+  public void setTime(int newTime)
   {
-    Time oldTime = time;
+    int oldTime = time;
     time = newTime;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MymixPackage.WAIT__TIME, oldTime, newTime);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setTime(Time newTime)
-  {
-    if (newTime != time)
-    {
-      NotificationChain msgs = null;
-      if (time != null)
-        msgs = ((InternalEObject)time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MymixPackage.WAIT__TIME, null, msgs);
-      if (newTime != null)
-        msgs = ((InternalEObject)newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MymixPackage.WAIT__TIME, null, msgs);
-      msgs = basicSetTime(newTime, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MymixPackage.WAIT__TIME, newTime, newTime));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MymixPackage.WAIT__TIME:
-        return basicSetTime(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, MymixPackage.WAIT__TIME, oldTime, time));
   }
 
   /**
@@ -154,7 +120,7 @@ public class WaitImpl extends OperationImpl implements Wait
     switch (featureID)
     {
       case MymixPackage.WAIT__TIME:
-        setTime((Time)newValue);
+        setTime((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,7 +137,7 @@ public class WaitImpl extends OperationImpl implements Wait
     switch (featureID)
     {
       case MymixPackage.WAIT__TIME:
-        setTime((Time)null);
+        setTime(TIME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -188,9 +154,26 @@ public class WaitImpl extends OperationImpl implements Wait
     switch (featureID)
     {
       case MymixPackage.WAIT__TIME:
-        return time != null;
+        return time != TIME_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (time: ");
+    result.append(time);
+    result.append(')');
+    return result.toString();
   }
 
 } //WaitImpl

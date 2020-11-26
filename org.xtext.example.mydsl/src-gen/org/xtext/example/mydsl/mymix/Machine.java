@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.mymix.Machine#getProcedures <em>Procedures</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.mymix.Machine#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.mymix.MymixPackage#getMachine()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface Machine extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Procedures</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.mymix.Procedure}.
+   * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.mymix.Operation}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Procedures</em>' containment reference list.
-   * @see org.xtext.example.mydsl.mymix.MymixPackage#getMachine_Procedures()
+   * @return the value of the '<em>Operations</em>' containment reference list.
+   * @see org.xtext.example.mydsl.mymix.MymixPackage#getMachine_Operations()
    * @model containment="true"
    * @generated
    */
-  EList<Procedure> getProcedures();
+  EList<Operation> getOperations();
 
 } // Machine

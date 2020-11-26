@@ -33,15 +33,6 @@ public interface MymixFactory extends EFactory
   Machine createMachine();
 
   /**
-   * Returns a new object of class '<em>Procedure</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Procedure</em>'.
-   * @generated
-   */
-  Procedure createProcedure();
-
-  /**
    * Returns a new object of class '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -49,42 +40,6 @@ public interface MymixFactory extends EFactory
    * @generated
    */
   Operation createOperation();
-
-  /**
-   * Returns a new object of class '<em>Take Stuff</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Take Stuff</em>'.
-   * @generated
-   */
-  TakeStuff createTakeStuff();
-
-  /**
-   * Returns a new object of class '<em>Take</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Take</em>'.
-   * @generated
-   */
-  Take createTake();
-
-  /**
-   * Returns a new object of class '<em>Put Some</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Put Some</em>'.
-   * @generated
-   */
-  PutSome createPutSome();
-
-  /**
-   * Returns a new object of class '<em>Put All</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Put All</em>'.
-   * @generated
-   */
-  PutAll createPutAll();
 
   /**
    * Returns a new object of class '<em>Put</em>'.
@@ -96,15 +51,6 @@ public interface MymixFactory extends EFactory
   Put createPut();
 
   /**
-   * Returns a new object of class '<em>Check</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Check</em>'.
-   * @generated
-   */
-  Check createCheck();
-
-  /**
    * Returns a new object of class '<em>Wait</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -112,15 +58,6 @@ public interface MymixFactory extends EFactory
    * @generated
    */
   Wait createWait();
-
-  /**
-   * Returns a new object of class '<em>Result</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Result</em>'.
-   * @generated
-   */
-  Result createResult();
 
   /**
    * Returns a new object of class '<em>Filter</em>'.
@@ -148,15 +85,6 @@ public interface MymixFactory extends EFactory
    * @generated
    */
   Quantity createQuantity();
-
-  /**
-   * Returns a new object of class '<em>Time</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Time</em>'.
-   * @generated
-   */
-  Time createTime();
 
   /**
    * Returns the package supported by this factory.

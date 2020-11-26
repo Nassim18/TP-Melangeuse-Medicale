@@ -3,7 +3,7 @@
  */
 package org.xtext.example.mydsl.mymix;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,13 +17,14 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.mydsl.mymix.Put#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.mymix.Put#getCup <em>Cup</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.mymix.Put#getFilter <em>Filter</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.mymix.Put#getWait <em>Wait</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.mymix.MymixPackage#getPut()
  * @model
  * @generated
  */
-public interface Put extends EObject
+public interface Put extends Operation
 {
   /**
    * Returns the value of the '<em><b>Quantity</b></em>' containment reference.
@@ -90,5 +91,17 @@ public interface Put extends EObject
    * @generated
    */
   void setFilter(Filter value);
+
+  /**
+   * Returns the value of the '<em><b>Wait</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.mymix.Wait}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Wait</em>' containment reference list.
+   * @see org.xtext.example.mydsl.mymix.MymixPackage#getPut_Wait()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Wait> getWait();
 
 } // Put

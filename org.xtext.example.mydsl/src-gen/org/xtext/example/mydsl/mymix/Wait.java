@@ -23,25 +23,25 @@ package org.xtext.example.mydsl.mymix;
 public interface Wait extends Operation
 {
   /**
-   * Returns the value of the '<em><b>Time</b></em>' containment reference.
+   * Returns the value of the '<em><b>Time</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Time</em>' containment reference.
-   * @see #setTime(Time)
+   * @return the value of the '<em>Time</em>' attribute.
+   * @see #setTime(int)
    * @see org.xtext.example.mydsl.mymix.MymixPackage#getWait_Time()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Time getTime();
+  int getTime();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.mymix.Wait#getTime <em>Time</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.mydsl.mymix.Wait#getTime <em>Time</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Time</em>' containment reference.
+   * @param value the new value of the '<em>Time</em>' attribute.
    * @see #getTime()
    * @generated
    */
-  void setTime(Time value);
+  void setTime(int value);
 
 } // Wait

@@ -81,34 +81,9 @@ public class MymixAdapterFactory extends AdapterFactoryImpl
         return createMachineAdapter();
       }
       @Override
-      public Adapter caseProcedure(Procedure object)
-      {
-        return createProcedureAdapter();
-      }
-      @Override
       public Adapter caseOperation(Operation object)
       {
         return createOperationAdapter();
-      }
-      @Override
-      public Adapter caseTakeStuff(TakeStuff object)
-      {
-        return createTakeStuffAdapter();
-      }
-      @Override
-      public Adapter caseTake(Take object)
-      {
-        return createTakeAdapter();
-      }
-      @Override
-      public Adapter casePutSome(PutSome object)
-      {
-        return createPutSomeAdapter();
-      }
-      @Override
-      public Adapter casePutAll(PutAll object)
-      {
-        return createPutAllAdapter();
       }
       @Override
       public Adapter casePut(Put object)
@@ -116,19 +91,9 @@ public class MymixAdapterFactory extends AdapterFactoryImpl
         return createPutAdapter();
       }
       @Override
-      public Adapter caseCheck(Check object)
-      {
-        return createCheckAdapter();
-      }
-      @Override
       public Adapter caseWait(Wait object)
       {
         return createWaitAdapter();
-      }
-      @Override
-      public Adapter caseResult(Result object)
-      {
-        return createResultAdapter();
       }
       @Override
       public Adapter caseFilter(Filter object)
@@ -144,11 +109,6 @@ public class MymixAdapterFactory extends AdapterFactoryImpl
       public Adapter caseQuantity(Quantity object)
       {
         return createQuantityAdapter();
-      }
-      @Override
-      public Adapter caseTime(Time object)
-      {
-        return createTimeAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -188,21 +148,6 @@ public class MymixAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.mymix.Procedure <em>Procedure</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.mymix.Procedure
-   * @generated
-   */
-  public Adapter createProcedureAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.mymix.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -213,66 +158,6 @@ public class MymixAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOperationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.mymix.TakeStuff <em>Take Stuff</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.mymix.TakeStuff
-   * @generated
-   */
-  public Adapter createTakeStuffAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.mymix.Take <em>Take</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.mymix.Take
-   * @generated
-   */
-  public Adapter createTakeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.mymix.PutSome <em>Put Some</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.mymix.PutSome
-   * @generated
-   */
-  public Adapter createPutSomeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.mymix.PutAll <em>Put All</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.mymix.PutAll
-   * @generated
-   */
-  public Adapter createPutAllAdapter()
   {
     return null;
   }
@@ -293,21 +178,6 @@ public class MymixAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.mymix.Check <em>Check</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.mymix.Check
-   * @generated
-   */
-  public Adapter createCheckAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.mymix.Wait <em>Wait</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -318,21 +188,6 @@ public class MymixAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createWaitAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.mymix.Result <em>Result</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.mymix.Result
-   * @generated
-   */
-  public Adapter createResultAdapter()
   {
     return null;
   }
@@ -378,21 +233,6 @@ public class MymixAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createQuantityAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.mymix.Time <em>Time</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.mymix.Time
-   * @generated
-   */
-  public Adapter createTimeAdapter()
   {
     return null;
   }

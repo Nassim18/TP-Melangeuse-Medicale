@@ -32,50 +32,22 @@ public class MymixParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MymixGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getOperationAccess().getAlternatives(), "rule__Operation__Alternatives");
-			builder.put(grammarAccess.getTakeStuffAccess().getAlternatives_1(), "rule__TakeStuff__Alternatives_1");
 			builder.put(grammarAccess.getFilterAccess().getAlternatives(), "rule__Filter__Alternatives");
-			builder.put(grammarAccess.getProcedureAccess().getGroup(), "rule__Procedure__Group__0");
-			builder.put(grammarAccess.getTakeStuffAccess().getGroup(), "rule__TakeStuff__Group__0");
-			builder.put(grammarAccess.getTakeAccess().getGroup(), "rule__Take__Group__0");
-			builder.put(grammarAccess.getTakeAccess().getGroup_4(), "rule__Take__Group_4__0");
-			builder.put(grammarAccess.getPutSomeAccess().getGroup(), "rule__PutSome__Group__0");
-			builder.put(grammarAccess.getPutAllAccess().getGroup(), "rule__PutAll__Group__0");
-			builder.put(grammarAccess.getPutAllAccess().getGroup_2(), "rule__PutAll__Group_2__0");
 			builder.put(grammarAccess.getPutAccess().getGroup(), "rule__Put__Group__0");
-			builder.put(grammarAccess.getPutAccess().getGroup_4(), "rule__Put__Group_4__0");
-			builder.put(grammarAccess.getCheckAccess().getGroup(), "rule__Check__Group__0");
-			builder.put(grammarAccess.getCheckAccess().getGroup_2(), "rule__Check__Group_2__0");
+			builder.put(grammarAccess.getPutAccess().getGroup_6(), "rule__Put__Group_6__0");
 			builder.put(grammarAccess.getWaitAccess().getGroup(), "rule__Wait__Group__0");
-			builder.put(grammarAccess.getResultAccess().getGroup(), "rule__Result__Group__0");
 			builder.put(grammarAccess.getCupAccess().getGroup(), "rule__Cup__Group__0");
-			builder.put(grammarAccess.getQuantityAccess().getGroup(), "rule__Quantity__Group__0");
-			builder.put(grammarAccess.getTimeAccess().getGroup(), "rule__Time__Group__0");
-			builder.put(grammarAccess.getMachineAccess().getProceduresAssignment(), "rule__Machine__ProceduresAssignment");
-			builder.put(grammarAccess.getProcedureAccess().getNameAssignment_1(), "rule__Procedure__NameAssignment_1");
-			builder.put(grammarAccess.getProcedureAccess().getBodyAssignment_2(), "rule__Procedure__BodyAssignment_2");
-			builder.put(grammarAccess.getProcedureAccess().getResultAssignment_3(), "rule__Procedure__ResultAssignment_3");
-			builder.put(grammarAccess.getTakeStuffAccess().getOpAssignment_0(), "rule__TakeStuff__OpAssignment_0");
-			builder.put(grammarAccess.getTakeStuffAccess().getBodyAssignment_1_0(), "rule__TakeStuff__BodyAssignment_1_0");
-			builder.put(grammarAccess.getTakeStuffAccess().getBodyAssignment_1_1(), "rule__TakeStuff__BodyAssignment_1_1");
-			builder.put(grammarAccess.getTakeAccess().getQuantityAssignment_1(), "rule__Take__QuantityAssignment_1");
-			builder.put(grammarAccess.getTakeAccess().getCupAssignment_3(), "rule__Take__CupAssignment_3");
-			builder.put(grammarAccess.getTakeAccess().getFilterAssignment_4_1(), "rule__Take__FilterAssignment_4_1");
-			builder.put(grammarAccess.getPutSomeAccess().getWaitAssignment_0(), "rule__PutSome__WaitAssignment_0");
-			builder.put(grammarAccess.getPutSomeAccess().getPutAssignment_1(), "rule__PutSome__PutAssignment_1");
-			builder.put(grammarAccess.getPutAllAccess().getCupAssignment_1(), "rule__PutAll__CupAssignment_1");
-			builder.put(grammarAccess.getPutAllAccess().getFilterAssignment_2_1(), "rule__PutAll__FilterAssignment_2_1");
+			builder.put(grammarAccess.getMachineAccess().getOperationsAssignment(), "rule__Machine__OperationsAssignment");
 			builder.put(grammarAccess.getPutAccess().getQuantityAssignment_1(), "rule__Put__QuantityAssignment_1");
 			builder.put(grammarAccess.getPutAccess().getCupAssignment_3(), "rule__Put__CupAssignment_3");
-			builder.put(grammarAccess.getPutAccess().getFilterAssignment_4_1(), "rule__Put__FilterAssignment_4_1");
-			builder.put(grammarAccess.getCheckAccess().getCupAssignment_1(), "rule__Check__CupAssignment_1");
-			builder.put(grammarAccess.getCheckAccess().getQuantityAssignment_2_1(), "rule__Check__QuantityAssignment_2_1");
+			builder.put(grammarAccess.getPutAccess().getCupAssignment_5(), "rule__Put__CupAssignment_5");
+			builder.put(grammarAccess.getPutAccess().getFilterAssignment_6_1(), "rule__Put__FilterAssignment_6_1");
+			builder.put(grammarAccess.getPutAccess().getWaitAssignment_7(), "rule__Put__WaitAssignment_7");
 			builder.put(grammarAccess.getWaitAccess().getTimeAssignment_1(), "rule__Wait__TimeAssignment_1");
-			builder.put(grammarAccess.getResultAccess().getCupAssignment_1(), "rule__Result__CupAssignment_1");
 			builder.put(grammarAccess.getFilterAccess().getFilterAssignment_0(), "rule__Filter__FilterAssignment_0");
 			builder.put(grammarAccess.getFilterAccess().getFilterAssignment_1(), "rule__Filter__FilterAssignment_1");
 			builder.put(grammarAccess.getCupAccess().getCupAssignment_1(), "rule__Cup__CupAssignment_1");
-			builder.put(grammarAccess.getQuantityAccess().getQuantityAssignment_0(), "rule__Quantity__QuantityAssignment_0");
-			builder.put(grammarAccess.getTimeAccess().getTimeAssignment_0(), "rule__Time__TimeAssignment_0");
+			builder.put(grammarAccess.getQuantityAccess().getQuantityAssignment(), "rule__Quantity__QuantityAssignment");
 		}
 	}
 	

@@ -3,20 +3,27 @@
  */
 package org.xtext.example.mydsl.mymix.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.mymix.Cup;
 import org.xtext.example.mydsl.mymix.Filter;
 import org.xtext.example.mydsl.mymix.MymixPackage;
 import org.xtext.example.mydsl.mymix.Put;
 import org.xtext.example.mydsl.mymix.Quantity;
+import org.xtext.example.mydsl.mymix.Wait;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,11 +36,12 @@ import org.xtext.example.mydsl.mymix.Quantity;
  *   <li>{@link org.xtext.example.mydsl.mymix.impl.PutImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.mymix.impl.PutImpl#getCup <em>Cup</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.mymix.impl.PutImpl#getFilter <em>Filter</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.mymix.impl.PutImpl#getWait <em>Wait</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PutImpl extends MinimalEObjectImpl.Container implements Put
+public class PutImpl extends OperationImpl implements Put
 {
   /**
    * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' containment reference.
@@ -64,6 +72,16 @@ public class PutImpl extends MinimalEObjectImpl.Container implements Put
    * @ordered
    */
   protected Filter filter;
+
+  /**
+   * The cached value of the '{@link #getWait() <em>Wait</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWait()
+   * @generated
+   * @ordered
+   */
+  protected EList<Wait> wait;
 
   /**
    * <!-- begin-user-doc -->
@@ -242,6 +260,21 @@ public class PutImpl extends MinimalEObjectImpl.Container implements Put
    * @generated
    */
   @Override
+  public EList<Wait> getWait()
+  {
+    if (wait == null)
+    {
+      wait = new EObjectContainmentEList<Wait>(Wait.class, this, MymixPackage.PUT__WAIT);
+    }
+    return wait;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -252,6 +285,8 @@ public class PutImpl extends MinimalEObjectImpl.Container implements Put
         return basicSetCup(null, msgs);
       case MymixPackage.PUT__FILTER:
         return basicSetFilter(null, msgs);
+      case MymixPackage.PUT__WAIT:
+        return ((InternalEList<?>)getWait()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -272,6 +307,8 @@ public class PutImpl extends MinimalEObjectImpl.Container implements Put
         return getCup();
       case MymixPackage.PUT__FILTER:
         return getFilter();
+      case MymixPackage.PUT__WAIT:
+        return getWait();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -281,6 +318,7 @@ public class PutImpl extends MinimalEObjectImpl.Container implements Put
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -294,6 +332,10 @@ public class PutImpl extends MinimalEObjectImpl.Container implements Put
         return;
       case MymixPackage.PUT__FILTER:
         setFilter((Filter)newValue);
+        return;
+      case MymixPackage.PUT__WAIT:
+        getWait().clear();
+        getWait().addAll((Collection<? extends Wait>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -318,6 +360,9 @@ public class PutImpl extends MinimalEObjectImpl.Container implements Put
       case MymixPackage.PUT__FILTER:
         setFilter((Filter)null);
         return;
+      case MymixPackage.PUT__WAIT:
+        getWait().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -338,6 +383,8 @@ public class PutImpl extends MinimalEObjectImpl.Container implements Put
         return cup != null;
       case MymixPackage.PUT__FILTER:
         return filter != null;
+      case MymixPackage.PUT__WAIT:
+        return wait != null && !wait.isEmpty();
     }
     return super.eIsSet(featureID);
   }

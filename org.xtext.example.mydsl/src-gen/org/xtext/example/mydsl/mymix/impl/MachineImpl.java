@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.mymix.Machine;
 import org.xtext.example.mydsl.mymix.MymixPackage;
-import org.xtext.example.mydsl.mymix.Procedure;
+import org.xtext.example.mydsl.mymix.Operation;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.xtext.example.mydsl.mymix.Procedure;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.mymix.impl.MachineImpl#getProcedures <em>Procedures</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.mymix.impl.MachineImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.xtext.example.mydsl.mymix.Procedure;
 public class MachineImpl extends MinimalEObjectImpl.Container implements Machine
 {
   /**
-   * The cached value of the '{@link #getProcedures() <em>Procedures</em>}' containment reference list.
+   * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProcedures()
+   * @see #getOperations()
    * @generated
    * @ordered
    */
-  protected EList<Procedure> procedures;
+  protected EList<Operation> operations;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +73,13 @@ public class MachineImpl extends MinimalEObjectImpl.Container implements Machine
    * @generated
    */
   @Override
-  public EList<Procedure> getProcedures()
+  public EList<Operation> getOperations()
   {
-    if (procedures == null)
+    if (operations == null)
     {
-      procedures = new EObjectContainmentEList<Procedure>(Procedure.class, this, MymixPackage.MACHINE__PROCEDURES);
+      operations = new EObjectContainmentEList<Operation>(Operation.class, this, MymixPackage.MACHINE__OPERATIONS);
     }
-    return procedures;
+    return operations;
   }
 
   /**
@@ -92,8 +92,8 @@ public class MachineImpl extends MinimalEObjectImpl.Container implements Machine
   {
     switch (featureID)
     {
-      case MymixPackage.MACHINE__PROCEDURES:
-        return ((InternalEList<?>)getProcedures()).basicRemove(otherEnd, msgs);
+      case MymixPackage.MACHINE__OPERATIONS:
+        return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class MachineImpl extends MinimalEObjectImpl.Container implements Machine
   {
     switch (featureID)
     {
-      case MymixPackage.MACHINE__PROCEDURES:
-        return getProcedures();
+      case MymixPackage.MACHINE__OPERATIONS:
+        return getOperations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class MachineImpl extends MinimalEObjectImpl.Container implements Machine
   {
     switch (featureID)
     {
-      case MymixPackage.MACHINE__PROCEDURES:
-        getProcedures().clear();
-        getProcedures().addAll((Collection<? extends Procedure>)newValue);
+      case MymixPackage.MACHINE__OPERATIONS:
+        getOperations().clear();
+        getOperations().addAll((Collection<? extends Operation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class MachineImpl extends MinimalEObjectImpl.Container implements Machine
   {
     switch (featureID)
     {
-      case MymixPackage.MACHINE__PROCEDURES:
-        getProcedures().clear();
+      case MymixPackage.MACHINE__OPERATIONS:
+        getOperations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +160,8 @@ public class MachineImpl extends MinimalEObjectImpl.Container implements Machine
   {
     switch (featureID)
     {
-      case MymixPackage.MACHINE__PROCEDURES:
-        return procedures != null && !procedures.isEmpty();
+      case MymixPackage.MACHINE__OPERATIONS:
+        return operations != null && !operations.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -80,13 +80,6 @@ public class MymixSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MymixPackage.PROCEDURE:
-      {
-        Procedure procedure = (Procedure)theEObject;
-        T result = caseProcedure(procedure);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MymixPackage.OPERATION:
       {
         Operation operation = (Operation)theEObject;
@@ -94,47 +87,11 @@ public class MymixSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MymixPackage.TAKE_STUFF:
-      {
-        TakeStuff takeStuff = (TakeStuff)theEObject;
-        T result = caseTakeStuff(takeStuff);
-        if (result == null) result = caseOperation(takeStuff);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MymixPackage.TAKE:
-      {
-        Take take = (Take)theEObject;
-        T result = caseTake(take);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MymixPackage.PUT_SOME:
-      {
-        PutSome putSome = (PutSome)theEObject;
-        T result = casePutSome(putSome);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MymixPackage.PUT_ALL:
-      {
-        PutAll putAll = (PutAll)theEObject;
-        T result = casePutAll(putAll);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MymixPackage.PUT:
       {
         Put put = (Put)theEObject;
         T result = casePut(put);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MymixPackage.CHECK:
-      {
-        Check check = (Check)theEObject;
-        T result = caseCheck(check);
-        if (result == null) result = caseOperation(check);
+        if (result == null) result = caseOperation(put);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -145,13 +102,6 @@ public class MymixSwitch<T> extends Switch<T>
         if (result == null) result = caseOperation(wait);
         if (result == null) result = defaultCase(theEObject);
         return result;
-      }
-      case MymixPackage.RESULT:
-      {
-        Result result = (Result)theEObject;
-        T theResult = caseResult(result);
-        if (theResult == null) theResult = defaultCase(theEObject);
-        return theResult;
       }
       case MymixPackage.FILTER:
       {
@@ -171,13 +121,6 @@ public class MymixSwitch<T> extends Switch<T>
       {
         Quantity quantity = (Quantity)theEObject;
         T result = caseQuantity(quantity);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MymixPackage.TIME:
-      {
-        Time time = (Time)theEObject;
-        T result = caseTime(time);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -202,22 +145,6 @@ public class MymixSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Procedure</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Procedure</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseProcedure(Procedure object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -229,70 +156,6 @@ public class MymixSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOperation(Operation object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Take Stuff</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Take Stuff</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTakeStuff(TakeStuff object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Take</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Take</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTake(Take object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Put Some</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Put Some</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePutSome(PutSome object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Put All</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Put All</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePutAll(PutAll object)
   {
     return null;
   }
@@ -314,22 +177,6 @@ public class MymixSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Check</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Check</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCheck(Check object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Wait</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -341,22 +188,6 @@ public class MymixSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseWait(Wait object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Result</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Result</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseResult(Result object)
   {
     return null;
   }
@@ -405,22 +236,6 @@ public class MymixSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseQuantity(Quantity object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Time</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Time</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTime(Time object)
   {
     return null;
   }

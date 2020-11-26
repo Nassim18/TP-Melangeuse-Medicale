@@ -24,155 +24,71 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public class MachineElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Machine");
-		private final Assignment cProceduresAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cProceduresProcedureParserRuleCall_0 = (RuleCall)cProceduresAssignment.eContents().get(0);
+		private final Assignment cOperationsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cOperationsOperationParserRuleCall_0 = (RuleCall)cOperationsAssignment.eContents().get(0);
 		
 		//Machine:
-		//	procedures+=Procedure* //La machine dispose de plusieurs procedures
+		//	operations+=Operation+ //La machine dispose de plusieurs procedures
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//procedures+=Procedure*
-		public Assignment getProceduresAssignment() { return cProceduresAssignment; }
-		
-		//Procedure
-		public RuleCall getProceduresProcedureParserRuleCall_0() { return cProceduresProcedureParserRuleCall_0; }
-	}
-	public class ProcedureElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Procedure");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cProcedureKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cBodyAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cBodyOperationParserRuleCall_2_0 = (RuleCall)cBodyAssignment_2.eContents().get(0);
-		private final Assignment cResultAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cResultResultParserRuleCall_3_0 = (RuleCall)cResultAssignment_3.eContents().get(0);
-		
-		//Procedure:
-		//	'procedure' name=ID //Nom de la procédure
-		//	body+=Operation+ //Contenu de procédure a 1 ou plusieurs procédures
-		//	result=Result //Resultat retourné par la procédure
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'procedure' name=ID //Nom de la procédure
-		//body+=Operation+ //Contenu de procédure a 1 ou plusieurs procédures
-		//result=Result
-		public Group getGroup() { return cGroup; }
-		
-		//'procedure'
-		public Keyword getProcedureKeyword_0() { return cProcedureKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		////Nom de la procédure
-		//body+=Operation+
-		public Assignment getBodyAssignment_2() { return cBodyAssignment_2; }
+		//operations+=Operation+
+		public Assignment getOperationsAssignment() { return cOperationsAssignment; }
 		
 		//Operation
-		public RuleCall getBodyOperationParserRuleCall_2_0() { return cBodyOperationParserRuleCall_2_0; }
-		
-		////Contenu de procédure a 1 ou plusieurs procédures
-		//result=Result
-		public Assignment getResultAssignment_3() { return cResultAssignment_3; }
-		
-		//Result
-		public RuleCall getResultResultParserRuleCall_3_0() { return cResultResultParserRuleCall_3_0; }
+		public RuleCall getOperationsOperationParserRuleCall_0() { return cOperationsOperationParserRuleCall_0; }
 	}
 	public class OperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Operation");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cCheckParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cWaitParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cTakeStuffParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cWaitParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cPutParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Operation:
-		//	Check | Wait | TakeStuff //3 types d'opérations : 
+		//	Wait | Put //3 types d'opérations : 
 		//	//check (pour tester la quantité de l'échantillon)
 		//	//Wait (pour l'attente)
-		//	//TakeStuf (pour prelever un échantillon)
+		//	//Put (pour prelever et injecter un échantillon)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Check | Wait | TakeStuff
+		//Wait | Put
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Check
-		public RuleCall getCheckParserRuleCall_0() { return cCheckParserRuleCall_0; }
-		
 		//Wait
-		public RuleCall getWaitParserRuleCall_1() { return cWaitParserRuleCall_1; }
+		public RuleCall getWaitParserRuleCall_0() { return cWaitParserRuleCall_0; }
 		
-		//TakeStuff
-		public RuleCall getTakeStuffParserRuleCall_2() { return cTakeStuffParserRuleCall_2; }
+		//Put
+		public RuleCall getPutParserRuleCall_1() { return cPutParserRuleCall_1; }
 	}
-	public class TakeStuffElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.TakeStuff");
+	public class PutElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Put");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cOpAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cOpTakeParserRuleCall_0_0 = (RuleCall)cOpAssignment_0.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Assignment cBodyAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
-		private final RuleCall cBodyPutSomeParserRuleCall_1_0_0 = (RuleCall)cBodyAssignment_1_0.eContents().get(0);
-		private final Assignment cBodyAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
-		private final RuleCall cBodyPutAllParserRuleCall_1_1_0 = (RuleCall)cBodyAssignment_1_1.eContents().get(0);
-		
-		//TakeStuff:
-		//	op=Take (body=PutSome | body=PutAll);
-		@Override public ParserRule getRule() { return rule; }
-		
-		//op=Take (body=PutSome | body=PutAll)
-		public Group getGroup() { return cGroup; }
-		
-		//op=Take
-		public Assignment getOpAssignment_0() { return cOpAssignment_0; }
-		
-		//Take
-		public RuleCall getOpTakeParserRuleCall_0_0() { return cOpTakeParserRuleCall_0_0; }
-		
-		//(body=PutSome | body=PutAll)
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-		
-		//body=PutSome
-		public Assignment getBodyAssignment_1_0() { return cBodyAssignment_1_0; }
-		
-		//PutSome
-		public RuleCall getBodyPutSomeParserRuleCall_1_0_0() { return cBodyPutSomeParserRuleCall_1_0_0; }
-		
-		//body=PutAll
-		public Assignment getBodyAssignment_1_1() { return cBodyAssignment_1_1; }
-		
-		//PutAll
-		public RuleCall getBodyPutAllParserRuleCall_1_1_0() { return cBodyPutAllParserRuleCall_1_1_0; }
-	}
-	public class TakeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Take");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTakeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cPutKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cQuantityAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cQuantityQuantityParserRuleCall_1_0 = (RuleCall)cQuantityAssignment_1.eContents().get(0);
 		private final Keyword cFromKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cCupAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cCupCupParserRuleCall_3_0 = (RuleCall)cCupAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cFilterKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cFilterAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cFilterFilterParserRuleCall_4_1_0 = (RuleCall)cFilterAssignment_4_1.eContents().get(0);
+		private final Keyword cToKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cCupAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cCupCupParserRuleCall_5_0 = (RuleCall)cCupAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cFilterKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cFilterAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cFilterFilterParserRuleCall_6_1_0 = (RuleCall)cFilterAssignment_6_1.eContents().get(0);
+		private final Assignment cWaitAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cWaitWaitParserRuleCall_7_0 = (RuleCall)cWaitAssignment_7.eContents().get(0);
 		
-		//Take:
-		//	'take' quantity=Quantity 'from' cup=Cup ('filter' filter=Filter)?;
+		//Put:
+		//	'put' quantity=Quantity 'from' cup=Cup 'to' cup=Cup ('filter' filter=Filter)? wait+=Wait?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'take' quantity=Quantity 'from' cup=Cup ('filter' filter=Filter)?
+		//'put' quantity=Quantity 'from' cup=Cup 'to' cup=Cup ('filter' filter=Filter)? wait+=Wait?
 		public Group getGroup() { return cGroup; }
 		
-		//'take'
-		public Keyword getTakeKeyword_0() { return cTakeKeyword_0; }
+		//'put'
+		public Keyword getPutKeyword_0() { return cPutKeyword_0; }
 		
 		//quantity=Quantity
 		public Assignment getQuantityAssignment_1() { return cQuantityAssignment_1; }
@@ -189,219 +105,55 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//Cup
 		public RuleCall getCupCupParserRuleCall_3_0() { return cCupCupParserRuleCall_3_0; }
 		
+		//'to'
+		public Keyword getToKeyword_4() { return cToKeyword_4; }
+		
+		//cup=Cup
+		public Assignment getCupAssignment_5() { return cCupAssignment_5; }
+		
+		//Cup
+		public RuleCall getCupCupParserRuleCall_5_0() { return cCupCupParserRuleCall_5_0; }
+		
 		//('filter' filter=Filter)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'filter'
-		public Keyword getFilterKeyword_4_0() { return cFilterKeyword_4_0; }
+		public Keyword getFilterKeyword_6_0() { return cFilterKeyword_6_0; }
 		
 		//filter=Filter
-		public Assignment getFilterAssignment_4_1() { return cFilterAssignment_4_1; }
+		public Assignment getFilterAssignment_6_1() { return cFilterAssignment_6_1; }
 		
 		//Filter
-		public RuleCall getFilterFilterParserRuleCall_4_1_0() { return cFilterFilterParserRuleCall_4_1_0; }
-	}
-	public class PutSomeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.PutSome");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cWaitAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cWaitWaitParserRuleCall_0_0 = (RuleCall)cWaitAssignment_0.eContents().get(0);
-		private final Assignment cPutAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPutPutParserRuleCall_1_0 = (RuleCall)cPutAssignment_1.eContents().get(0);
-		
-		//PutSome:
-		//	(wait+=Wait? put+=Put)+;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//(wait+=Wait? put+=Put)+
-		public Group getGroup() { return cGroup; }
+		public RuleCall getFilterFilterParserRuleCall_6_1_0() { return cFilterFilterParserRuleCall_6_1_0; }
 		
 		//wait+=Wait?
-		public Assignment getWaitAssignment_0() { return cWaitAssignment_0; }
+		public Assignment getWaitAssignment_7() { return cWaitAssignment_7; }
 		
 		//Wait
-		public RuleCall getWaitWaitParserRuleCall_0_0() { return cWaitWaitParserRuleCall_0_0; }
-		
-		//put+=Put
-		public Assignment getPutAssignment_1() { return cPutAssignment_1; }
-		
-		//Put
-		public RuleCall getPutPutParserRuleCall_1_0() { return cPutPutParserRuleCall_1_0; }
-	}
-	public class PutAllElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.PutAll");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cToKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCupAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCupCupParserRuleCall_1_0 = (RuleCall)cCupAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cFilterKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cFilterAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cFilterFilterParserRuleCall_2_1_0 = (RuleCall)cFilterAssignment_2_1.eContents().get(0);
-		
-		//PutAll:
-		//	'to' cup=Cup ('filter' filter=Filter)?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'to' cup=Cup ('filter' filter=Filter)?
-		public Group getGroup() { return cGroup; }
-		
-		//'to'
-		public Keyword getToKeyword_0() { return cToKeyword_0; }
-		
-		//cup=Cup
-		public Assignment getCupAssignment_1() { return cCupAssignment_1; }
-		
-		//Cup
-		public RuleCall getCupCupParserRuleCall_1_0() { return cCupCupParserRuleCall_1_0; }
-		
-		//('filter' filter=Filter)?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'filter'
-		public Keyword getFilterKeyword_2_0() { return cFilterKeyword_2_0; }
-		
-		//filter=Filter
-		public Assignment getFilterAssignment_2_1() { return cFilterAssignment_2_1; }
-		
-		//Filter
-		public RuleCall getFilterFilterParserRuleCall_2_1_0() { return cFilterFilterParserRuleCall_2_1_0; }
-	}
-	public class PutElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Put");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPutKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cQuantityAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cQuantityQuantityParserRuleCall_1_0 = (RuleCall)cQuantityAssignment_1.eContents().get(0);
-		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cCupAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCupCupParserRuleCall_3_0 = (RuleCall)cCupAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cFilterKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cFilterAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cFilterFilterParserRuleCall_4_1_0 = (RuleCall)cFilterAssignment_4_1.eContents().get(0);
-		
-		//Put:
-		//	'put' quantity=Quantity 'to' cup=Cup ('filter' filter=Filter)?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'put' quantity=Quantity 'to' cup=Cup ('filter' filter=Filter)?
-		public Group getGroup() { return cGroup; }
-		
-		//'put'
-		public Keyword getPutKeyword_0() { return cPutKeyword_0; }
-		
-		//quantity=Quantity
-		public Assignment getQuantityAssignment_1() { return cQuantityAssignment_1; }
-		
-		//Quantity
-		public RuleCall getQuantityQuantityParserRuleCall_1_0() { return cQuantityQuantityParserRuleCall_1_0; }
-		
-		//'to'
-		public Keyword getToKeyword_2() { return cToKeyword_2; }
-		
-		//cup=Cup
-		public Assignment getCupAssignment_3() { return cCupAssignment_3; }
-		
-		//Cup
-		public RuleCall getCupCupParserRuleCall_3_0() { return cCupCupParserRuleCall_3_0; }
-		
-		//('filter' filter=Filter)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'filter'
-		public Keyword getFilterKeyword_4_0() { return cFilterKeyword_4_0; }
-		
-		//filter=Filter
-		public Assignment getFilterAssignment_4_1() { return cFilterAssignment_4_1; }
-		
-		//Filter
-		public RuleCall getFilterFilterParserRuleCall_4_1_0() { return cFilterFilterParserRuleCall_4_1_0; }
-	}
-	public class CheckElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Check");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCheckKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCupAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCupCupParserRuleCall_1_0 = (RuleCall)cCupAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cForQuantityKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cQuantityAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cQuantityQuantityParserRuleCall_2_1_0 = (RuleCall)cQuantityAssignment_2_1.eContents().get(0);
-		
-		//Check:
-		//	'check' cup=Cup ('forQuantity' quantity=Quantity)?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'check' cup=Cup ('forQuantity' quantity=Quantity)?
-		public Group getGroup() { return cGroup; }
-		
-		//'check'
-		public Keyword getCheckKeyword_0() { return cCheckKeyword_0; }
-		
-		//cup=Cup
-		public Assignment getCupAssignment_1() { return cCupAssignment_1; }
-		
-		//Cup
-		public RuleCall getCupCupParserRuleCall_1_0() { return cCupCupParserRuleCall_1_0; }
-		
-		//('forQuantity' quantity=Quantity)?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'forQuantity'
-		public Keyword getForQuantityKeyword_2_0() { return cForQuantityKeyword_2_0; }
-		
-		//quantity=Quantity
-		public Assignment getQuantityAssignment_2_1() { return cQuantityAssignment_2_1; }
-		
-		//Quantity
-		public RuleCall getQuantityQuantityParserRuleCall_2_1_0() { return cQuantityQuantityParserRuleCall_2_1_0; }
+		public RuleCall getWaitWaitParserRuleCall_7_0() { return cWaitWaitParserRuleCall_7_0; }
 	}
 	public class WaitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Wait");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWaitKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTimeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTimeTimeParserRuleCall_1_0 = (RuleCall)cTimeAssignment_1.eContents().get(0);
+		private final RuleCall cTimeINTTerminalRuleCall_1_0 = (RuleCall)cTimeAssignment_1.eContents().get(0);
 		
 		//Wait:
-		//	'wait' time=Time;
+		//	'wait' time=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'wait' time=Time
+		//'wait' time=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'wait'
 		public Keyword getWaitKeyword_0() { return cWaitKeyword_0; }
 		
-		//time=Time
+		//time=INT
 		public Assignment getTimeAssignment_1() { return cTimeAssignment_1; }
 		
-		//Time
-		public RuleCall getTimeTimeParserRuleCall_1_0() { return cTimeTimeParserRuleCall_1_0; }
-	}
-	public class ResultElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Result");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cResultKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCupAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCupCupParserRuleCall_1_0 = (RuleCall)cCupAssignment_1.eContents().get(0);
-		
-		//Result:
-		//	'result' cup=Cup;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'result' cup=Cup
-		public Group getGroup() { return cGroup; }
-		
-		//'result'
-		public Keyword getResultKeyword_0() { return cResultKeyword_0; }
-		
-		//cup=Cup
-		public Assignment getCupAssignment_1() { return cCupAssignment_1; }
-		
-		//Cup
-		public RuleCall getCupCupParserRuleCall_1_0() { return cCupCupParserRuleCall_1_0; }
+		//INT
+		public RuleCall getTimeINTTerminalRuleCall_1_0() { return cTimeINTTerminalRuleCall_1_0; }
 	}
 	public class FilterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Filter");
@@ -438,13 +190,13 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cCupINTTerminalRuleCall_1_0 = (RuleCall)cCupAssignment_1.eContents().get(0);
 		
 		//Cup:
-		//	'cup'? cup=INT;
+		//	'cup' cup=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'cup'? cup=INT
+		//'cup' cup=INT
 		public Group getGroup() { return cGroup; }
 		
-		//'cup'?
+		//'cup'
 		public Keyword getCupKeyword_0() { return cCupKeyword_0; }
 		
 		//cup=INT
@@ -455,67 +207,28 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	public class QuantityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Quantity");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cQuantityAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cQuantityINTTerminalRuleCall_0_0 = (RuleCall)cQuantityAssignment_0.eContents().get(0);
-		private final Keyword cMLKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cQuantityAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cQuantityINTTerminalRuleCall_0 = (RuleCall)cQuantityAssignment.eContents().get(0);
 		
 		//Quantity:
-		//	quantity=INT 'mL'?;
+		//	quantity=INT;
 		@Override public ParserRule getRule() { return rule; }
-		
-		//quantity=INT 'mL'?
-		public Group getGroup() { return cGroup; }
 		
 		//quantity=INT
-		public Assignment getQuantityAssignment_0() { return cQuantityAssignment_0; }
+		public Assignment getQuantityAssignment() { return cQuantityAssignment; }
 		
 		//INT
-		public RuleCall getQuantityINTTerminalRuleCall_0_0() { return cQuantityINTTerminalRuleCall_0_0; }
-		
-		//'mL'?
-		public Keyword getMLKeyword_1() { return cMLKeyword_1; }
-	}
-	public class TimeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.Mymix.Time");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTimeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTimeINTTerminalRuleCall_0_0 = (RuleCall)cTimeAssignment_0.eContents().get(0);
-		private final Keyword cSecKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		
-		//Time:
-		//	time=INT 'sec'?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//time=INT 'sec'?
-		public Group getGroup() { return cGroup; }
-		
-		//time=INT
-		public Assignment getTimeAssignment_0() { return cTimeAssignment_0; }
-		
-		//INT
-		public RuleCall getTimeINTTerminalRuleCall_0_0() { return cTimeINTTerminalRuleCall_0_0; }
-		
-		//'sec'?
-		public Keyword getSecKeyword_1() { return cSecKeyword_1; }
+		public RuleCall getQuantityINTTerminalRuleCall_0() { return cQuantityINTTerminalRuleCall_0; }
 	}
 	
 	
 	private final MachineElements pMachine;
-	private final ProcedureElements pProcedure;
 	private final OperationElements pOperation;
-	private final TakeStuffElements pTakeStuff;
-	private final TakeElements pTake;
-	private final PutSomeElements pPutSome;
-	private final PutAllElements pPutAll;
 	private final PutElements pPut;
-	private final CheckElements pCheck;
 	private final WaitElements pWait;
-	private final ResultElements pResult;
 	private final FilterElements pFilter;
 	private final CupElements pCup;
 	private final QuantityElements pQuantity;
-	private final TimeElements pTime;
 	
 	private final Grammar grammar;
 	
@@ -527,20 +240,12 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pMachine = new MachineElements();
-		this.pProcedure = new ProcedureElements();
 		this.pOperation = new OperationElements();
-		this.pTakeStuff = new TakeStuffElements();
-		this.pTake = new TakeElements();
-		this.pPutSome = new PutSomeElements();
-		this.pPutAll = new PutAllElements();
 		this.pPut = new PutElements();
-		this.pCheck = new CheckElements();
 		this.pWait = new WaitElements();
-		this.pResult = new ResultElements();
 		this.pFilter = new FilterElements();
 		this.pCup = new CupElements();
 		this.pQuantity = new QuantityElements();
-		this.pTime = new TimeElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -571,7 +276,7 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 
 	
 	//Machine:
-	//	procedures+=Procedure* //La machine dispose de plusieurs procedures
+	//	operations+=Operation+ //La machine dispose de plusieurs procedures
 	//;
 	public MachineElements getMachineAccess() {
 		return pMachine;
@@ -581,24 +286,11 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getMachineAccess().getRule();
 	}
 	
-	//Procedure:
-	//	'procedure' name=ID //Nom de la procédure
-	//	body+=Operation+ //Contenu de procédure a 1 ou plusieurs procédures
-	//	result=Result //Resultat retourné par la procédure
-	//;
-	public ProcedureElements getProcedureAccess() {
-		return pProcedure;
-	}
-	
-	public ParserRule getProcedureRule() {
-		return getProcedureAccess().getRule();
-	}
-	
 	//Operation:
-	//	Check | Wait | TakeStuff //3 types d'opérations : 
+	//	Wait | Put //3 types d'opérations : 
 	//	//check (pour tester la quantité de l'échantillon)
 	//	//Wait (pour l'attente)
-	//	//TakeStuf (pour prelever un échantillon)
+	//	//Put (pour prelever et injecter un échantillon)
 	//;
 	public OperationElements getOperationAccess() {
 		return pOperation;
@@ -608,48 +300,8 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getOperationAccess().getRule();
 	}
 	
-	//TakeStuff:
-	//	op=Take (body=PutSome | body=PutAll);
-	public TakeStuffElements getTakeStuffAccess() {
-		return pTakeStuff;
-	}
-	
-	public ParserRule getTakeStuffRule() {
-		return getTakeStuffAccess().getRule();
-	}
-	
-	//Take:
-	//	'take' quantity=Quantity 'from' cup=Cup ('filter' filter=Filter)?;
-	public TakeElements getTakeAccess() {
-		return pTake;
-	}
-	
-	public ParserRule getTakeRule() {
-		return getTakeAccess().getRule();
-	}
-	
-	//PutSome:
-	//	(wait+=Wait? put+=Put)+;
-	public PutSomeElements getPutSomeAccess() {
-		return pPutSome;
-	}
-	
-	public ParserRule getPutSomeRule() {
-		return getPutSomeAccess().getRule();
-	}
-	
-	//PutAll:
-	//	'to' cup=Cup ('filter' filter=Filter)?;
-	public PutAllElements getPutAllAccess() {
-		return pPutAll;
-	}
-	
-	public ParserRule getPutAllRule() {
-		return getPutAllAccess().getRule();
-	}
-	
 	//Put:
-	//	'put' quantity=Quantity 'to' cup=Cup ('filter' filter=Filter)?;
+	//	'put' quantity=Quantity 'from' cup=Cup 'to' cup=Cup ('filter' filter=Filter)? wait+=Wait?;
 	public PutElements getPutAccess() {
 		return pPut;
 	}
@@ -658,34 +310,14 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getPutAccess().getRule();
 	}
 	
-	//Check:
-	//	'check' cup=Cup ('forQuantity' quantity=Quantity)?;
-	public CheckElements getCheckAccess() {
-		return pCheck;
-	}
-	
-	public ParserRule getCheckRule() {
-		return getCheckAccess().getRule();
-	}
-	
 	//Wait:
-	//	'wait' time=Time;
+	//	'wait' time=INT;
 	public WaitElements getWaitAccess() {
 		return pWait;
 	}
 	
 	public ParserRule getWaitRule() {
 		return getWaitAccess().getRule();
-	}
-	
-	//Result:
-	//	'result' cup=Cup;
-	public ResultElements getResultAccess() {
-		return pResult;
-	}
-	
-	public ParserRule getResultRule() {
-		return getResultAccess().getRule();
 	}
 	
 	//Filter:
@@ -699,7 +331,7 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Cup:
-	//	'cup'? cup=INT;
+	//	'cup' cup=INT;
 	public CupElements getCupAccess() {
 		return pCup;
 	}
@@ -709,23 +341,13 @@ public class MymixGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Quantity:
-	//	quantity=INT 'mL'?;
+	//	quantity=INT;
 	public QuantityElements getQuantityAccess() {
 		return pQuantity;
 	}
 	
 	public ParserRule getQuantityRule() {
 		return getQuantityAccess().getRule();
-	}
-	
-	//Time:
-	//	time=INT 'sec'?;
-	public TimeElements getTimeAccess() {
-		return pTime;
-	}
-	
-	public ParserRule getTimeRule() {
-		return getTimeAccess().getRule();
 	}
 	
 	//terminal ID:

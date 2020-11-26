@@ -66,20 +66,12 @@ public class MymixFactoryImpl extends EFactoryImpl implements MymixFactory
     switch (eClass.getClassifierID())
     {
       case MymixPackage.MACHINE: return createMachine();
-      case MymixPackage.PROCEDURE: return createProcedure();
       case MymixPackage.OPERATION: return createOperation();
-      case MymixPackage.TAKE_STUFF: return createTakeStuff();
-      case MymixPackage.TAKE: return createTake();
-      case MymixPackage.PUT_SOME: return createPutSome();
-      case MymixPackage.PUT_ALL: return createPutAll();
       case MymixPackage.PUT: return createPut();
-      case MymixPackage.CHECK: return createCheck();
       case MymixPackage.WAIT: return createWait();
-      case MymixPackage.RESULT: return createResult();
       case MymixPackage.FILTER: return createFilter();
       case MymixPackage.CUP: return createCup();
       case MymixPackage.QUANTITY: return createQuantity();
-      case MymixPackage.TIME: return createTime();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -103,70 +95,10 @@ public class MymixFactoryImpl extends EFactoryImpl implements MymixFactory
    * @generated
    */
   @Override
-  public Procedure createProcedure()
-  {
-    ProcedureImpl procedure = new ProcedureImpl();
-    return procedure;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Operation createOperation()
   {
     OperationImpl operation = new OperationImpl();
     return operation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public TakeStuff createTakeStuff()
-  {
-    TakeStuffImpl takeStuff = new TakeStuffImpl();
-    return takeStuff;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Take createTake()
-  {
-    TakeImpl take = new TakeImpl();
-    return take;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PutSome createPutSome()
-  {
-    PutSomeImpl putSome = new PutSomeImpl();
-    return putSome;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public PutAll createPutAll()
-  {
-    PutAllImpl putAll = new PutAllImpl();
-    return putAll;
   }
 
   /**
@@ -187,34 +119,10 @@ public class MymixFactoryImpl extends EFactoryImpl implements MymixFactory
    * @generated
    */
   @Override
-  public Check createCheck()
-  {
-    CheckImpl check = new CheckImpl();
-    return check;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Wait createWait()
   {
     WaitImpl wait = new WaitImpl();
     return wait;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Result createResult()
-  {
-    ResultImpl result = new ResultImpl();
-    return result;
   }
 
   /**
@@ -251,18 +159,6 @@ public class MymixFactoryImpl extends EFactoryImpl implements MymixFactory
   {
     QuantityImpl quantity = new QuantityImpl();
     return quantity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Time createTime()
-  {
-    TimeImpl time = new TimeImpl();
-    return time;
   }
 
   /**

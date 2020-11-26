@@ -3,53 +3,23 @@ grammar org.xtext.example.mydsl.Mymix with org.eclipse.xtext.common.Terminals
 generate mymix "http://www.xtext.org/example/mydsl/Mymix"
 
 Machine:
-	(procedures+=Procedure)*  //La machine dispose de plusieurs procedures
+	(operations+=Operation)+  //La machine dispose de plusieurs procedures
 ;
 	
-	
-Procedure:
-	'procedure' name=ID   	//Nom de la procédure
-	(body+=Operation)+		//Contenu de procédure a une ou plusieurs procédures
-	result=Result			//Resultat retourné par la procédure
-;
-
 Operation:
-	Check | Wait | TakeStuff	//3 types d'opérations : 
+    Wait | Put	//3 types d'opérations : 
 								//check (pour tester la quantité de l'échantillon)
 								//Wait (pour l'attente)
-								//TakeStuf (pour prelever un échantillon)
-;
-
-TakeStuff:
-	op=Take ( body=PutSome | body=PutAll )  // les deux méthodes PutAll et PutSome pour injecter l'échantillion prelevé
-;
-
-Take:
-	'take' quantity=Quantity 'from' cup=Cup ('filter' filter=Filter)? 	
-;
-
-PutSome:
-	(wait+=Wait? put+=Put)+
-;
-
-PutAll:
-	'to' cup=Cup ('filter' filter=Filter)?
+								//Put (pour prelever et injecter un échantillon)
 ;
 
 Put:
-	'put' quantity=Quantity 'to' cup=Cup ('filter' filter=Filter)? 
+	'put' quantity=Quantity 'from' cup=Cup 'to' cup=Cup ('filter' filter=Filter)? (wait+=Wait)?
 ;
 
-Check:
-	'check' cup=Cup ('forQuantity' quantity=Quantity)? 
-;
 
 Wait:
-	'wait' time=Time
-;
-
-Result:
-	'result' cup=Cup
+	'wait' time=INT
 ;
 
 Filter:
@@ -57,13 +27,9 @@ Filter:
 ;
 
 Cup:
-	'cup'? cup=INT
+	'cup' cup=INT
 ;
 
 Quantity:
-	quantity=INT 'mL'?
-;
-
-Time:
-	time=INT 'sec'?
+	quantity=INT 
 ;

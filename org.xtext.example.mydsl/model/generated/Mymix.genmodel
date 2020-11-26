@@ -7,45 +7,17 @@
   <genPackages prefix="Mymix" basePackage="org.xtext.example.mydsl" disposableProviderFactory="true"
       fileExtensions="mydsl" ecorePackage="Mymix.ecore#/">
     <genClasses ecoreClass="Mymix.ecore#//Machine">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Machine/procedures"/>
-    </genClasses>
-    <genClasses ecoreClass="Mymix.ecore#//Procedure">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mymix.ecore#//Procedure/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Procedure/body"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Procedure/result"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Machine/operations"/>
     </genClasses>
     <genClasses ecoreClass="Mymix.ecore#//Operation"/>
-    <genClasses ecoreClass="Mymix.ecore#//TakeStuff">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//TakeStuff/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//TakeStuff/body"/>
-    </genClasses>
-    <genClasses ecoreClass="Mymix.ecore#//Take">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Take/quantity"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Take/cup"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Take/filter"/>
-    </genClasses>
-    <genClasses ecoreClass="Mymix.ecore#//PutSome">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//PutSome/wait"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//PutSome/put"/>
-    </genClasses>
-    <genClasses ecoreClass="Mymix.ecore#//PutAll">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//PutAll/cup"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//PutAll/filter"/>
-    </genClasses>
     <genClasses ecoreClass="Mymix.ecore#//Put">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Put/quantity"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Put/cup"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Put/filter"/>
-    </genClasses>
-    <genClasses ecoreClass="Mymix.ecore#//Check">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Check/cup"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Check/quantity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Put/wait"/>
     </genClasses>
     <genClasses ecoreClass="Mymix.ecore#//Wait">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Wait/time"/>
-    </genClasses>
-    <genClasses ecoreClass="Mymix.ecore#//Result">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mymix.ecore#//Result/cup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mymix.ecore#//Wait/time"/>
     </genClasses>
     <genClasses ecoreClass="Mymix.ecore#//Filter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mymix.ecore#//Filter/filter"/>
@@ -55,9 +27,6 @@
     </genClasses>
     <genClasses ecoreClass="Mymix.ecore#//Quantity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mymix.ecore#//Quantity/quantity"/>
-    </genClasses>
-    <genClasses ecoreClass="Mymix.ecore#//Time">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mymix.ecore#//Time/time"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

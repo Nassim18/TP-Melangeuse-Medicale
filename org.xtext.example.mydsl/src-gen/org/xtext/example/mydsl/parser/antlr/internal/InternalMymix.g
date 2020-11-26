@@ -78,101 +78,22 @@ ruleMachine returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getMachineAccess().getProceduresProcedureParserRuleCall_0());
+				newCompositeNode(grammarAccess.getMachineAccess().getOperationsOperationParserRuleCall_0());
 			}
-			lv_procedures_0_0=ruleProcedure
+			lv_operations_0_0=ruleOperation
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getMachineRule());
 				}
 				add(
 					$current,
-					"procedures",
-					lv_procedures_0_0,
-					"org.xtext.example.mydsl.Mymix.Procedure");
+					"operations",
+					lv_operations_0_0,
+					"org.xtext.example.mydsl.Mymix.Operation");
 				afterParserOrEnumRuleCall();
 			}
 		)
-	)*
-;
-
-// Entry rule entryRuleProcedure
-entryRuleProcedure returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getProcedureRule()); }
-	iv_ruleProcedure=ruleProcedure
-	{ $current=$iv_ruleProcedure.current; }
-	EOF;
-
-// Rule Procedure
-ruleProcedure returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='procedure'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getProcedureAccess().getProcedureKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getProcedureAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getProcedureRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getProcedureAccess().getBodyOperationParserRuleCall_2_0());
-				}
-				lv_body_2_0=ruleOperation
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getProcedureRule());
-					}
-					add(
-						$current,
-						"body",
-						lv_body_2_0,
-						"org.xtext.example.mydsl.Mymix.Operation");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)+
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getProcedureAccess().getResultResultParserRuleCall_3_0());
-				}
-				lv_result_3_0=ruleResult
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getProcedureRule());
-					}
-					set(
-						$current,
-						"result",
-						lv_result_3_0,
-						"org.xtext.example.mydsl.Mymix.Result");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
+	)+
 ;
 
 // Entry rule entryRuleOperation
@@ -192,324 +113,22 @@ ruleOperation returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getOperationAccess().getCheckParserRuleCall_0());
+			newCompositeNode(grammarAccess.getOperationAccess().getWaitParserRuleCall_0());
 		}
-		this_Check_0=ruleCheck
+		this_Wait_0=ruleWait
 		{
-			$current = $this_Check_0.current;
+			$current = $this_Wait_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getOperationAccess().getWaitParserRuleCall_1());
+			newCompositeNode(grammarAccess.getOperationAccess().getPutParserRuleCall_1());
 		}
-		this_Wait_1=ruleWait
+		this_Put_1=rulePut
 		{
-			$current = $this_Wait_1.current;
+			$current = $this_Put_1.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getOperationAccess().getTakeStuffParserRuleCall_2());
-		}
-		this_TakeStuff_2=ruleTakeStuff
-		{
-			$current = $this_TakeStuff_2.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleTakeStuff
-entryRuleTakeStuff returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTakeStuffRule()); }
-	iv_ruleTakeStuff=ruleTakeStuff
-	{ $current=$iv_ruleTakeStuff.current; }
-	EOF;
-
-// Rule TakeStuff
-ruleTakeStuff returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getTakeStuffAccess().getOpTakeParserRuleCall_0_0());
-				}
-				lv_op_0_0=ruleTake
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTakeStuffRule());
-					}
-					set(
-						$current,
-						"op",
-						lv_op_0_0,
-						"org.xtext.example.mydsl.Mymix.Take");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getTakeStuffAccess().getBodyPutSomeParserRuleCall_1_0_0());
-					}
-					lv_body_1_0=rulePutSome
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTakeStuffRule());
-						}
-						set(
-							$current,
-							"body",
-							lv_body_1_0,
-							"org.xtext.example.mydsl.Mymix.PutSome");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			    |
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getTakeStuffAccess().getBodyPutAllParserRuleCall_1_1_0());
-					}
-					lv_body_2_0=rulePutAll
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTakeStuffRule());
-						}
-						set(
-							$current,
-							"body",
-							lv_body_2_0,
-							"org.xtext.example.mydsl.Mymix.PutAll");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleTake
-entryRuleTake returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTakeRule()); }
-	iv_ruleTake=ruleTake
-	{ $current=$iv_ruleTake.current; }
-	EOF;
-
-// Rule Take
-ruleTake returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='take'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getTakeAccess().getTakeKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getTakeAccess().getQuantityQuantityParserRuleCall_1_0());
-				}
-				lv_quantity_1_0=ruleQuantity
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTakeRule());
-					}
-					set(
-						$current,
-						"quantity",
-						lv_quantity_1_0,
-						"org.xtext.example.mydsl.Mymix.Quantity");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='from'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getTakeAccess().getFromKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getTakeAccess().getCupCupParserRuleCall_3_0());
-				}
-				lv_cup_3_0=ruleCup
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTakeRule());
-					}
-					set(
-						$current,
-						"cup",
-						lv_cup_3_0,
-						"org.xtext.example.mydsl.Mymix.Cup");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_4='filter'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getTakeAccess().getFilterKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getTakeAccess().getFilterFilterParserRuleCall_4_1_0());
-					}
-					lv_filter_5_0=ruleFilter
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTakeRule());
-						}
-						set(
-							$current,
-							"filter",
-							lv_filter_5_0,
-							"org.xtext.example.mydsl.Mymix.Filter");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-	)
-;
-
-// Entry rule entryRulePutSome
-entryRulePutSome returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPutSomeRule()); }
-	iv_rulePutSome=rulePutSome
-	{ $current=$iv_rulePutSome.current; }
-	EOF;
-
-// Rule PutSome
-rulePutSome returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getPutSomeAccess().getWaitWaitParserRuleCall_0_0());
-				}
-				lv_wait_0_0=ruleWait
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPutSomeRule());
-					}
-					add(
-						$current,
-						"wait",
-						lv_wait_0_0,
-						"org.xtext.example.mydsl.Mymix.Wait");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getPutSomeAccess().getPutPutParserRuleCall_1_0());
-				}
-				lv_put_1_0=rulePut
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPutSomeRule());
-					}
-					add(
-						$current,
-						"put",
-						lv_put_1_0,
-						"org.xtext.example.mydsl.Mymix.Put");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)+
-;
-
-// Entry rule entryRulePutAll
-entryRulePutAll returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPutAllRule()); }
-	iv_rulePutAll=rulePutAll
-	{ $current=$iv_rulePutAll.current; }
-	EOF;
-
-// Rule PutAll
-rulePutAll returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='to'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getPutAllAccess().getToKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getPutAllAccess().getCupCupParserRuleCall_1_0());
-				}
-				lv_cup_1_0=ruleCup
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPutAllRule());
-					}
-					set(
-						$current,
-						"cup",
-						lv_cup_1_0,
-						"org.xtext.example.mydsl.Mymix.Cup");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_2='filter'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getPutAllAccess().getFilterKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPutAllAccess().getFilterFilterParserRuleCall_2_1_0());
-					}
-					lv_filter_3_0=ruleFilter
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPutAllRule());
-						}
-						set(
-							$current,
-							"filter",
-							lv_filter_3_0,
-							"org.xtext.example.mydsl.Mymix.Filter");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -552,9 +171,9 @@ rulePut returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='to'
+		otherlv_2='from'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getPutAccess().getToKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getPutAccess().getFromKeyword_2());
 		}
 		(
 			(
@@ -575,17 +194,40 @@ rulePut returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_4='to'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getPutAccess().getToKeyword_4());
+		}
 		(
-			otherlv_4='filter'
+			(
+				{
+					newCompositeNode(grammarAccess.getPutAccess().getCupCupParserRuleCall_5_0());
+				}
+				lv_cup_5_0=ruleCup
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPutRule());
+					}
+					set(
+						$current,
+						"cup",
+						lv_cup_5_0,
+						"org.xtext.example.mydsl.Mymix.Cup");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_6='filter'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getPutAccess().getFilterKeyword_4_0());
+				newLeafNode(otherlv_6, grammarAccess.getPutAccess().getFilterKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPutAccess().getFilterFilterParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getPutAccess().getFilterFilterParserRuleCall_6_1_0());
 					}
-					lv_filter_5_0=ruleFilter
+					lv_filter_7_0=ruleFilter
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPutRule());
@@ -593,78 +235,30 @@ rulePut returns [EObject current=null]
 						set(
 							$current,
 							"filter",
-							lv_filter_5_0,
+							lv_filter_7_0,
 							"org.xtext.example.mydsl.Mymix.Filter");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-	)
-;
-
-// Entry rule entryRuleCheck
-entryRuleCheck returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getCheckRule()); }
-	iv_ruleCheck=ruleCheck
-	{ $current=$iv_ruleCheck.current; }
-	EOF;
-
-// Rule Check
-ruleCheck returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='check'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getCheckAccess().getCheckKeyword_0());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCheckAccess().getCupCupParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getPutAccess().getWaitWaitParserRuleCall_7_0());
 				}
-				lv_cup_1_0=ruleCup
+				lv_wait_8_0=ruleWait
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCheckRule());
+						$current = createModelElementForParent(grammarAccess.getPutRule());
 					}
-					set(
+					add(
 						$current,
-						"cup",
-						lv_cup_1_0,
-						"org.xtext.example.mydsl.Mymix.Cup");
+						"wait",
+						lv_wait_8_0,
+						"org.xtext.example.mydsl.Mymix.Wait");
 					afterParserOrEnumRuleCall();
 				}
-			)
-		)
-		(
-			otherlv_2='forQuantity'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getCheckAccess().getForQuantityKeyword_2_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCheckAccess().getQuantityQuantityParserRuleCall_2_1_0());
-					}
-					lv_quantity_3_0=ruleQuantity
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCheckRule());
-						}
-						set(
-							$current,
-							"quantity",
-							lv_quantity_3_0,
-							"org.xtext.example.mydsl.Mymix.Quantity");
-						afterParserOrEnumRuleCall();
-					}
-				)
 			)
 		)?
 	)
@@ -692,62 +286,19 @@ ruleWait returns [EObject current=null]
 		}
 		(
 			(
+				lv_time_1_0=RULE_INT
 				{
-					newCompositeNode(grammarAccess.getWaitAccess().getTimeTimeParserRuleCall_1_0());
+					newLeafNode(lv_time_1_0, grammarAccess.getWaitAccess().getTimeINTTerminalRuleCall_1_0());
 				}
-				lv_time_1_0=ruleTime
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getWaitRule());
+						$current = createModelElement(grammarAccess.getWaitRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"time",
 						lv_time_1_0,
-						"org.xtext.example.mydsl.Mymix.Time");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleResult
-entryRuleResult returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getResultRule()); }
-	iv_ruleResult=ruleResult
-	{ $current=$iv_ruleResult.current; }
-	EOF;
-
-// Rule Result
-ruleResult returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='result'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getResultAccess().getResultKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getResultAccess().getCupCupParserRuleCall_1_0());
-				}
-				lv_cup_1_0=ruleCup
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getResultRule());
-					}
-					set(
-						$current,
-						"cup",
-						lv_cup_1_0,
-						"org.xtext.example.mydsl.Mymix.Cup");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
@@ -818,12 +369,10 @@ ruleCup returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			otherlv_0='cup'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getCupAccess().getCupKeyword_0());
-			}
-		)?
+		otherlv_0='cup'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCupAccess().getCupKeyword_0());
+		}
 		(
 			(
 				lv_cup_1_0=RULE_INT
@@ -862,72 +411,21 @@ ruleQuantity returns [EObject current=null]
 }:
 	(
 		(
-			(
-				lv_quantity_0_0=RULE_INT
-				{
-					newLeafNode(lv_quantity_0_0, grammarAccess.getQuantityAccess().getQuantityINTTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getQuantityRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"quantity",
-						lv_quantity_0_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		(
-			otherlv_1='mL'
+			lv_quantity_0_0=RULE_INT
 			{
-				newLeafNode(otherlv_1, grammarAccess.getQuantityAccess().getMLKeyword_1());
+				newLeafNode(lv_quantity_0_0, grammarAccess.getQuantityAccess().getQuantityINTTerminalRuleCall_0());
 			}
-		)?
-	)
-;
-
-// Entry rule entryRuleTime
-entryRuleTime returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTimeRule()); }
-	iv_ruleTime=ruleTime
-	{ $current=$iv_ruleTime.current; }
-	EOF;
-
-// Rule Time
-ruleTime returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_time_0_0=RULE_INT
-				{
-					newLeafNode(lv_time_0_0, grammarAccess.getTimeAccess().getTimeINTTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTimeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"time",
-						lv_time_0_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		(
-			otherlv_1='sec'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getTimeAccess().getSecKeyword_1());
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getQuantityRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"quantity",
+					lv_quantity_0_0,
+					"org.eclipse.xtext.common.Terminals.INT");
 			}
-		)?
+		)
 	)
 ;
 

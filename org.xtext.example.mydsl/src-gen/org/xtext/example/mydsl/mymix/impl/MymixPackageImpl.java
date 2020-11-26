@@ -10,22 +10,14 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.example.mydsl.mymix.Check;
 import org.xtext.example.mydsl.mymix.Cup;
 import org.xtext.example.mydsl.mymix.Filter;
 import org.xtext.example.mydsl.mymix.Machine;
 import org.xtext.example.mydsl.mymix.MymixFactory;
 import org.xtext.example.mydsl.mymix.MymixPackage;
 import org.xtext.example.mydsl.mymix.Operation;
-import org.xtext.example.mydsl.mymix.Procedure;
 import org.xtext.example.mydsl.mymix.Put;
-import org.xtext.example.mydsl.mymix.PutAll;
-import org.xtext.example.mydsl.mymix.PutSome;
 import org.xtext.example.mydsl.mymix.Quantity;
-import org.xtext.example.mydsl.mymix.Result;
-import org.xtext.example.mydsl.mymix.Take;
-import org.xtext.example.mydsl.mymix.TakeStuff;
-import org.xtext.example.mydsl.mymix.Time;
 import org.xtext.example.mydsl.mymix.Wait;
 
 /**
@@ -48,42 +40,7 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass procedureEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass operationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass takeStuffEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass takeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass putSomeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass putAllEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,21 +54,7 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass checkEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass waitEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass resultEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -133,13 +76,6 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
    * @generated
    */
   private EClass quantityEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass timeEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -221,53 +157,9 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
    * @generated
    */
   @Override
-  public EReference getMachine_Procedures()
+  public EReference getMachine_Operations()
   {
     return (EReference)machineEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getProcedure()
-  {
-    return procedureEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getProcedure_Name()
-  {
-    return (EAttribute)procedureEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getProcedure_Body()
-  {
-    return (EReference)procedureEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getProcedure_Result()
-  {
-    return (EReference)procedureEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -279,149 +171,6 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
   public EClass getOperation()
   {
     return operationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getTakeStuff()
-  {
-    return takeStuffEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getTakeStuff_Op()
-  {
-    return (EReference)takeStuffEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getTakeStuff_Body()
-  {
-    return (EReference)takeStuffEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getTake()
-  {
-    return takeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getTake_Quantity()
-  {
-    return (EReference)takeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getTake_Cup()
-  {
-    return (EReference)takeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getTake_Filter()
-  {
-    return (EReference)takeEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPutSome()
-  {
-    return putSomeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPutSome_Wait()
-  {
-    return (EReference)putSomeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPutSome_Put()
-  {
-    return (EReference)putSomeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPutAll()
-  {
-    return putAllEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPutAll_Cup()
-  {
-    return (EReference)putAllEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPutAll_Filter()
-  {
-    return (EReference)putAllEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -474,31 +223,9 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
    * @generated
    */
   @Override
-  public EClass getCheck()
+  public EReference getPut_Wait()
   {
-    return checkEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getCheck_Cup()
-  {
-    return (EReference)checkEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getCheck_Quantity()
-  {
-    return (EReference)checkEClass.getEStructuralFeatures().get(1);
+    return (EReference)putEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -518,31 +245,9 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
    * @generated
    */
   @Override
-  public EReference getWait_Time()
+  public EAttribute getWait_Time()
   {
-    return (EReference)waitEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getResult()
-  {
-    return resultEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getResult_Cup()
-  {
-    return (EReference)resultEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)waitEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -617,28 +322,6 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
    * @generated
    */
   @Override
-  public EClass getTime()
-  {
-    return timeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getTime_Time()
-  {
-    return (EAttribute)timeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public MymixFactory getMymixFactory()
   {
     return (MymixFactory)getEFactoryInstance();
@@ -665,46 +348,18 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
 
     // Create classes and their features
     machineEClass = createEClass(MACHINE);
-    createEReference(machineEClass, MACHINE__PROCEDURES);
-
-    procedureEClass = createEClass(PROCEDURE);
-    createEAttribute(procedureEClass, PROCEDURE__NAME);
-    createEReference(procedureEClass, PROCEDURE__BODY);
-    createEReference(procedureEClass, PROCEDURE__RESULT);
+    createEReference(machineEClass, MACHINE__OPERATIONS);
 
     operationEClass = createEClass(OPERATION);
-
-    takeStuffEClass = createEClass(TAKE_STUFF);
-    createEReference(takeStuffEClass, TAKE_STUFF__OP);
-    createEReference(takeStuffEClass, TAKE_STUFF__BODY);
-
-    takeEClass = createEClass(TAKE);
-    createEReference(takeEClass, TAKE__QUANTITY);
-    createEReference(takeEClass, TAKE__CUP);
-    createEReference(takeEClass, TAKE__FILTER);
-
-    putSomeEClass = createEClass(PUT_SOME);
-    createEReference(putSomeEClass, PUT_SOME__WAIT);
-    createEReference(putSomeEClass, PUT_SOME__PUT);
-
-    putAllEClass = createEClass(PUT_ALL);
-    createEReference(putAllEClass, PUT_ALL__CUP);
-    createEReference(putAllEClass, PUT_ALL__FILTER);
 
     putEClass = createEClass(PUT);
     createEReference(putEClass, PUT__QUANTITY);
     createEReference(putEClass, PUT__CUP);
     createEReference(putEClass, PUT__FILTER);
-
-    checkEClass = createEClass(CHECK);
-    createEReference(checkEClass, CHECK__CUP);
-    createEReference(checkEClass, CHECK__QUANTITY);
+    createEReference(putEClass, PUT__WAIT);
 
     waitEClass = createEClass(WAIT);
-    createEReference(waitEClass, WAIT__TIME);
-
-    resultEClass = createEClass(RESULT);
-    createEReference(resultEClass, RESULT__CUP);
+    createEAttribute(waitEClass, WAIT__TIME);
 
     filterEClass = createEClass(FILTER);
     createEAttribute(filterEClass, FILTER__FILTER);
@@ -714,9 +369,6 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
 
     quantityEClass = createEClass(QUANTITY);
     createEAttribute(quantityEClass, QUANTITY__QUANTITY);
-
-    timeEClass = createEClass(TIME);
-    createEAttribute(timeEClass, TIME__TIME);
   }
 
   /**
@@ -748,52 +400,23 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    takeStuffEClass.getESuperTypes().add(this.getOperation());
-    checkEClass.getESuperTypes().add(this.getOperation());
+    putEClass.getESuperTypes().add(this.getOperation());
     waitEClass.getESuperTypes().add(this.getOperation());
 
     // Initialize classes and features; add operations and parameters
     initEClass(machineEClass, Machine.class, "Machine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMachine_Procedures(), this.getProcedure(), null, "procedures", null, 0, -1, Machine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(procedureEClass, Procedure.class, "Procedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProcedure_Name(), ecorePackage.getEString(), "name", null, 0, 1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProcedure_Body(), this.getOperation(), null, "body", null, 0, -1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProcedure_Result(), this.getResult(), null, "result", null, 0, 1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMachine_Operations(), this.getOperation(), null, "operations", null, 0, -1, Machine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(takeStuffEClass, TakeStuff.class, "TakeStuff", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTakeStuff_Op(), this.getTake(), null, "op", null, 0, 1, TakeStuff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTakeStuff_Body(), ecorePackage.getEObject(), null, "body", null, 0, 1, TakeStuff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(takeEClass, Take.class, "Take", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTake_Quantity(), this.getQuantity(), null, "quantity", null, 0, 1, Take.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTake_Cup(), this.getCup(), null, "cup", null, 0, 1, Take.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTake_Filter(), this.getFilter(), null, "filter", null, 0, 1, Take.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(putSomeEClass, PutSome.class, "PutSome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPutSome_Wait(), this.getWait(), null, "wait", null, 0, -1, PutSome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPutSome_Put(), this.getPut(), null, "put", null, 0, -1, PutSome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(putAllEClass, PutAll.class, "PutAll", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPutAll_Cup(), this.getCup(), null, "cup", null, 0, 1, PutAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPutAll_Filter(), this.getFilter(), null, "filter", null, 0, 1, PutAll.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(putEClass, Put.class, "Put", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPut_Quantity(), this.getQuantity(), null, "quantity", null, 0, 1, Put.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPut_Cup(), this.getCup(), null, "cup", null, 0, 1, Put.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPut_Filter(), this.getFilter(), null, "filter", null, 0, 1, Put.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(checkEClass, Check.class, "Check", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCheck_Cup(), this.getCup(), null, "cup", null, 0, 1, Check.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCheck_Quantity(), this.getQuantity(), null, "quantity", null, 0, 1, Check.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPut_Wait(), this.getWait(), null, "wait", null, 0, -1, Put.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(waitEClass, Wait.class, "Wait", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWait_Time(), this.getTime(), null, "time", null, 0, 1, Wait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(resultEClass, Result.class, "Result", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getResult_Cup(), this.getCup(), null, "cup", null, 0, 1, Result.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWait_Time(), ecorePackage.getEInt(), "time", null, 0, 1, Wait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(filterEClass, Filter.class, "Filter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFilter_Filter(), ecorePackage.getEString(), "filter", null, 0, 1, Filter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -803,9 +426,6 @@ public class MymixPackageImpl extends EPackageImpl implements MymixPackage
 
     initEClass(quantityEClass, Quantity.class, "Quantity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getQuantity_Quantity(), ecorePackage.getEInt(), "quantity", null, 0, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(timeEClass, Time.class, "Time", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTime_Time(), ecorePackage.getEInt(), "time", null, 0, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
